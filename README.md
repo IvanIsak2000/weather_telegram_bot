@@ -61,8 +61,7 @@ mJ46G9JY1k2woiVs07EDkw%3A1671210270761&source=hp&ei=HqWcY4jKLOGGwPAP9cKtgAo&ifls
         headers ={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.62"}
         full_page = requests.get(site, headers=headers)
         soup = BeautifulSoup(full_page.content, 'html.parser')
-        convert = soup.findAll("span",{"class":"wob_t",
-"class":"q8U8x"})
+        convert = soup.findAll("span",{"class":"q8U8x"})
         convert_1 = soup.findAll("span",{ "id":"wob_dc"})
         d=""
         for temperature in convert :
@@ -126,7 +125,7 @@ Telegram-бот, который получает город от пользов�
         headers ={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.62"}
         full_page = requests.get(site, headers=headers)
         soup = BeautifulSoup(full_page.content, 'html.parser')
-        convert = soup.findAll("span",{"class":"wob_t","class":"q8U8x"})
+        convert = soup.findAll("span",{"class":"q8U8x"})
         convert_1 = soup.findAll("span",{ "id":"wob_dc"})
         d = ""
         for temperature in convert :
