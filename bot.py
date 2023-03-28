@@ -44,7 +44,7 @@ def echo_all(message):
             city = message.text.lower()
             first_city = city[0]
             user_city = str((city.replace(city[0], city[0].upper())))
-    except BaseException:
+    except:
         user_city = "NONE"
 
     print(user_city)
@@ -64,7 +64,7 @@ def echo_all(message):
         cities += city.split()
 
     if user_city in cities:
-        print("есть")
+        print("Такой город существует!\nSuch a city exists!")
         site = ("https://www.google.com/search?q=погода+в+" + str(user_city.split()) + "&hl=ru&sxsrf=ALiCzsaDFVg-mJ46G9JY1k2woiVs07EDkw%3A1671210270761&source=hp&ei=HqWcY4jKLOGGwPAP9cKtgAo&iflsig=AJiK0e8AAAAAY5yzLqFF0IHK5muOVlySe3enRck5K4dR&ved=0ahUKEwiI0aC0z_77AhVhAxAIHXVhC6AQ4dUDCAc&uact=5&oq=погода+в+моске&gs_lcp=Cgdnd3Mtd2l6EAMyDQgAEIAEELEDEIMBEAoyBwgAEIAEEAoyBwgAEIAEEAoyBwgAEIAEEAoyBwgAEIAEEAoyBwgAEIAEEAoyBwgAEIAEEAoyBwgAEIAEEAoyBwgAEIAEEAoyBwgAEIAEEAo6BAgjECc6CwgAEIAEELEDEIMBOgUIABCABDoICAAQsQMQgwE6EQguEIAEELEDEIMBEMcBENEDOgwIIxAnEJ0CEEYQgAI6DggAEIAEELEDEIMBEMkDUABYpBBgzRFoAHAAeACAAeEBiAGvDJIBBTcuNi4xmAEAoAEB&sclient=gws-wiz")
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.62"}
@@ -77,11 +77,11 @@ def echo_all(message):
             d += temperature.getText() + " "
         for weah_r in convert_1:
             d += weah_r.getText()
-        answer = "Погода в городе / Weather in city: " + \
+        answer = "Погода в городе/Weather in city: " + \
             str(user_city) + " " + str(d)
 
     else:
-        answer = "Такого города нет! / There is no such city!"
+        answer = "Такого города нет!\nThere is no such city!"
 
     bot.reply_to(message, answer)
     print(user_city,
