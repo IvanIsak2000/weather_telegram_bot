@@ -8,7 +8,7 @@ from datetime import datetime
 
 from config import TOKEN
 
-bot = telebot.TeleBot("YOUR TELEGRAM BOT API")
+bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=['start'])
