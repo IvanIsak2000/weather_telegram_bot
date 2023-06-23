@@ -6,6 +6,8 @@ import re
 import time
 from datetime import datetime
 
+from config import TOKEN
+
 bot = telebot.TeleBot("YOUR TELEGRAM BOT API")
 
 
